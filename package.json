@@ -2,6 +2,13 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1"
+  },
+
+  "scripts": {
+    "dev": "sass --watch scss/app.scss:css/app.css",
+    "build": "sass scss/app.scss:css/app.css --style=compressed"
   }
+
 }
+
   
