@@ -1,0 +1,104 @@
+
+.grid{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+@for $i from  1 through 12  {
+
+    .col-#{$i}{
+        grid-template-columns: repeat($i,1fr);
+    }
+
+
+    .span-#{$i}{
+        grid-column: span $i;
+    }
+}
+
+
+@include mq.telefonosm { 
+        @for $i from  1 through 12  {
+
+        .col-telsm-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-telsm-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 
+
+@include mq.sm { 
+        @for $i from  1 through 12  {
+
+        .col-sm-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-sm-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 
+
+@include mq.tablets { 
+        @for $i from  1 through 12  {
+
+        .col-tablets-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-tablets-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 
+
+@include mq.desktop { 
+        @for $i from  1 through 12  {
+
+        .col-desktop-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-desktop-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 
+
+
+@include mq.desktopxl { 
+        @for $i from  1 through 12  {
+
+        .col-desktopxl-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-desktopxl-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 
+
+
+@include mq.desktopxxl { 
+        @for $i from  1 through 12  {
+
+        .col-desktopxxl-#{$i}{
+            grid-template-columns: repeat($i,1fr);
+        }
+
+
+        .span-desktopxxl-#{$i}{
+            grid-column: span $i;
+        }
+    }
+} 

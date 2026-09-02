@@ -1,3 +1,26 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=app.css.map */
