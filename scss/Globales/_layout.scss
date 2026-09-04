@@ -1,3 +1,4 @@
+@use "mediaquery" as mq;
 
 .grid{
     display: grid;
@@ -17,7 +18,7 @@
 }
 
 
-@include mq.telefonosm { 
+@include mq.telefonossm{ 
         @for $i from  1 through 12  {
 
         .col-telsm-#{$i}{

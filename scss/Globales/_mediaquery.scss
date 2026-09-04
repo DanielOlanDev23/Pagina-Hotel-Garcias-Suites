@@ -18,7 +18,7 @@
 
 @mixin tablets{
 
-    @media (min-width: v.$tablest){
+    @media (min-width: v.$tablets){
         @content;
     }
 
