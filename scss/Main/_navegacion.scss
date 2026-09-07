@@ -1,0 +1,65 @@
+@use '../Globales/variables' as v; 
+@use '../Globales/mixin' as m;
+
+.navbar-bg{
+    background-color: v.$navbar-bg;
+    color: v.$navbar-text;
+    --bs-navbar-color: #{v.$navbar-text};
+    --bs-navbar-hover-color: #{v.$navbar-text-hover};
+    --bs-navbar-active-color: #{v.$navbar-text-active};
+    --bs-navbar-brand-color: #{v.$navbar-text};
+    --bs-navbar-brand-hover-color: #{v.$navbar-text-hover};
+
+    //btn hamburguesa
+      --bs-navbar-toggler-border-color: #{v.$navbar-text};
+      --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23f8f5f0' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler{
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.navbar-logo{
+    width: 5rem;
+}
+
+.Alojamiento-toggle{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    i{
+        transition: transform .25s ease;
+    }
+
+
+    &[aria-expanded="true"]{
+        i{
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.AlojamientosShow{
+    max-width: 20rem;
+
+    .nav-link{
+        display: flex;
+        justify-content: space-between;
+
+        i{
+            transition: transform .25s ease;
+        }
+
+        &:hover i{
+            transform: translateX(.4rem);
+        }
+
+        &:active i{
+            transform: translateX(1rem);
+        }
+
+    }
+}

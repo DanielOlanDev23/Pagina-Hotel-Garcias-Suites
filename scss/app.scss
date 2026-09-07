@@ -9,4 +9,8 @@
 @use "Globales/globales";
 @use "Globales/variables";
 @use "Globales/mediaquery";
-@use "Globales/layout"
+@use "Globales/layout";
+
+
+//Importacion Cuerpo Pagina
+@use "Main/navegacion";
