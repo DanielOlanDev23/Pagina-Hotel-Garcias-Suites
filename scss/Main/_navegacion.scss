@@ -1,5 +1,6 @@
 @use '../Globales/variables' as v; 
 @use '../Globales/mixin' as m;
+@use '../Globales//mediaquery' as mq;
 
 .navbar-bg{
     background-color: v.$navbar-bg;
@@ -21,8 +22,73 @@
     }
 }
 
+.navbar-nav{
+    padding-top: 2rem;
+    gap: .8rem;
+    padding-inline: clamp(.9rem, 4vw, 3rem);
+    font-size: v.$font-siz-nav;
+}
+
+
 .navbar-logo{
     width: 5rem;
+    @include mq.tablets { 
+        width: 7rem;
+    } 
+}
+
+.nav-item-redes{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    
+    a{
+        font-size: 2rem;
+        margin-top: 2rem;
+        @include mq.tablets { 
+            margin-top: auto;
+        } 
+    }
+}
+
+.navbar-reservar-tablet{
+    display: none;
+    @include mq.tablets { 
+        display: block;
+    } 
+}
+
+.navbar-tablet{
+    @include mq.tablets { 
+        display: flex;
+        gap: 5rem;
+    } 
+}
+
+.reservar-celular{
+    @include mq.tablets { 
+        display: none;
+    } 
+}
+
+.reserva{
+    background-color: v.$btn-primary-bg;
+    color: v.$btn-primary-text;
+    padding: .5rem 3rem;
+    font-weight: v.$font-semibold;
+    transition: all 300ms ease;
+    
+    @include mq.tablets { 
+        font-size: v.$font-size-sm;
+        padding: .3rem 1.8rem;
+        border-radius: .5rem;
+    } 
+
+    &:hover{
+        background-color: v.$btn-primary-bg-hover;
+        color: v.$btn-primary-text;
+    }
 }
 
 .Alojamiento-toggle{
@@ -63,3 +129,4 @@
 
     }
 }
+
