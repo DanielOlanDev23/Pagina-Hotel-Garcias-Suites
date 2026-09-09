@@ -1,16 +1,28 @@
-//1. Dependencias necesarias de bootstrap
+@use "Globales/variables" as v;
 
-@use "../node_modules/bootstrap/scss/bootstrap.scss";
+@use "../node_modules/bootstrap/scss/bootstrap.scss" with (
+
+    $grid-breakpoints: (
+        xs: 0,
+        sm: v.$sm,
+        md: v.$tablets,
+        lg: v.$desktop,
+        xl: v.$desktopxl,
+        xxl: v.$desktopxxl
+    )
+);
+
+//1. Dependencias necesarias de bootstrap
 @use "../node_modules/bootstrap-icons/font/bootstrap-icons.scss" with (
     $bootstrap-icons-font-dir: "../assets/fonts"
 );
 
 //Importacion Carpeta Globales
 @use "Globales/globales";
-@use "Globales/variables";
+
+
 @use "Globales/mediaquery";
 @use "Globales/layout";
-
 
 //Importacion Cuerpo Pagina
 @use "Main/navegacion";

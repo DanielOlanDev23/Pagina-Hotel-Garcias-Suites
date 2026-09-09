@@ -27,8 +27,20 @@
     gap: .8rem;
     padding-inline: clamp(.9rem, 4vw, 3rem);
     font-size: v.$font-siz-nav;
+    @include mq.desktop { 
+        gap: 5rem;
+        align-items: center;
+    } 
 }
 
+
+.navbar-collapse{
+    width: 100%;
+    @include mq.desktop { 
+        display: flex;
+        justify-content: center;
+    } 
+}
 
 .navbar-logo{
     width: 5rem;
@@ -43,6 +55,10 @@
     display: flex;
     gap: 2rem;
     
+    @include mq.desktop { 
+        display: none;
+    } 
+
     a{
         font-size: 2rem;
         margin-top: 2rem;
@@ -64,13 +80,11 @@
         display: flex;
         gap: 5rem;
     } 
+    @include mq.desktop { 
+        display: none;
+    }
 }
 
-.reservar-celular{
-    @include mq.tablets { 
-        display: none;
-    } 
-}
 
 .reserva{
     background-color: v.$btn-primary-bg;
@@ -85,10 +99,38 @@
         border-radius: .5rem;
     } 
 
+    @include mq.desktop { 
+        padding: .5rem 5rem;
+    } 
+    
     &:hover{
         background-color: v.$btn-primary-bg-hover;
         color: v.$btn-primary-text;
     }
+}
+
+.reservar-celular{
+    @include mq.tablets { 
+        display: none;
+    } 
+    @include mq.desktop { 
+        display: block;
+    } 
+}
+
+
+
+.alojamientos-collapse-desktop{
+    @include mq.desktop { 
+        display: none;
+    } 
+}
+
+.alojamientos-dropdown-desktop{
+    display: none;
+    @include mq.desktop { 
+        display: block;
+    } 
 }
 
 .Alojamiento-toggle{
@@ -130,3 +172,55 @@
     }
 }
 
+
+
+@include mq.desktop { 
+
+    .dropdown-toggle{
+
+        &::after{
+            transition: transform .35s ease;
+            transform: rotate(180deg);
+        }
+
+        &[aria-expanded="true"]{
+            &::after{
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .dropdown-menu{
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-1rem);
+        font-size: v.$font-size-base;
+
+        transition: 
+        opacity .2s ease,
+        transform .35s ease,
+        visibility .2s ease;
+
+       a{
+            transition: 
+            background-color .15s ease,
+            color .2s ease;
+
+            &:hover{
+                background-color: v.$color-accent-hover;
+                color: v.$text-light;
+            }
+       }
+    }
+
+    .dropdown-menu.show{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+
+} 
