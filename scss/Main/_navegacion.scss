@@ -2,6 +2,19 @@
 @use '../Globales/mixin' as m;
 @use '../Globales//mediaquery' as mq;
 
+//Navegacion Estilos
+
+.navbar > .navbar-container{
+    @include mq.desktop { 
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 90%;
+        max-width: 160rem;
+       
+    } 
+}
+
 .navbar-bg{
     background-color: v.$navbar-bg;
     color: v.$navbar-text;
@@ -24,12 +37,18 @@
 
 .navbar-nav{
     padding-top: 2rem;
+    width: 100%;
     gap: .8rem;
     padding-inline: clamp(.9rem, 4vw, 3rem);
     font-size: v.$font-siz-nav;
     @include mq.desktop { 
         gap: 5rem;
         align-items: center;
+        justify-content: center;
+        font-size: 1.9rem;
+    } 
+    @include mq.desktopxl { 
+        gap: 9rem;
     } 
 }
 
@@ -47,6 +66,7 @@
     @include mq.tablets { 
         width: 7rem;
     } 
+
 }
 
 .nav-item-redes{
@@ -85,40 +105,50 @@
     }
 }
 
+//CTA ESTILOS
 
-.reserva{
-    background-color: v.$btn-primary-bg;
-    color: v.$btn-primary-text;
-    padding: .5rem 3rem;
+.cta-style{
+    background-color:transparent;
+    color: v.$color-secondary;
+    border: 2px solid v.$color-secondary;
+    padding: .5rem 2rem;
+    letter-spacing: 1px;
     font-weight: v.$font-semibold;
-    transition: all 300ms ease;
+    transition:
+    background-color .3s ease,
+    color .3s ease;
+
+    font-size: v.$font-size-base;
+    &:hover{
+        background-color: v.$btn-primary-bg-hover;
+        color: v.$color-secondary;
+    }
     
     @include mq.tablets { 
         font-size: v.$font-size-sm;
-        padding: .3rem 1.8rem;
-        border-radius: .5rem;
-    } 
-
-    @include mq.desktop { 
-        padding: .5rem 5rem;
+        padding: .7rem 2rem;
     } 
     
-    &:hover{
-        background-color: v.$btn-primary-bg-hover;
-        color: v.$btn-primary-text;
-    }
+    
 }
 
-.reservar-celular{
-    @include mq.tablets { 
+.cta-celular{
+    @include mq.tablets{ 
         display: none;
     } 
+}
+
+.cta-desktop{
+   display: none;
     @include mq.desktop { 
-        display: block;
+        display: inline-flex;
+        margin-left: auto;
     } 
+    
 }
 
 
+//Alojamiento estilos
 
 .alojamientos-collapse-desktop{
     @include mq.desktop { 
@@ -129,7 +159,7 @@
 .alojamientos-dropdown-desktop{
     display: none;
     @include mq.desktop { 
-        display: block;
+        display: inline-flex;
     } 
 }
 
@@ -173,10 +203,11 @@
 }
 
 
+// DROPDOWN ESTILOS
 
 @include mq.desktop { 
 
-    .dropdown-toggle{
+    .alojamientos-dropdown-desktop .dropdown-toggle{
 
         &::after{
             transition: transform .35s ease;
@@ -190,27 +221,32 @@
         }
     }
 
-    .dropdown-menu{
+    .alojamientos-dropdown-desktop .dropdown-menu{
         display: block;
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
         transform: translateY(-1rem);
+        background-color: v.$color-primary;
         font-size: v.$font-size-base;
+        padding: 2rem 0;
 
         transition: 
-        opacity .2s ease,
-        transform .35s ease,
-        visibility .2s ease;
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
 
        a{
             transition: 
             background-color .15s ease,
             color .2s ease;
-
+            color: v.$color-accent-light;
+            padding: .7rem 3rem;
+            
             &:hover{
-                background-color: v.$color-accent-hover;
-                color: v.$text-light;
+                width: 100%;
+                background-color: v.$color-primary-hover;
+                color: #fff;
             }
        }
     }

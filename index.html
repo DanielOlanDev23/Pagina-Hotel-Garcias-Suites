@@ -10,12 +10,12 @@
 
        
     <nav class="navbar navbar-expand-lg  navbar-bg">
-        <div class="container-fluid">
+        <div class="container-fluid navbar-container">
 
             <img src="img/Logo.png" alt="Imagen logo Garcias Suites" class="navbar-brand navbar-logo">
 
             <div class="navbar-tablet">
-                <a href="" class="navbar-reservar-tablet reserva">Reservar</a>
+                <a href="" class="navbar-reservar-tablet cta-style">Reservar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavegacionGarciasSuites" aria-controls="NavegacionGarciasSuites" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="NavegacionGarciasSuites">
 
 
-                <div class="navbar-nav">
+                <ul class="navbar-nav">
 
                     <li class="nav-item">
                          <a href="index.html" class="nav-link active">Inicio</a>
@@ -84,12 +84,12 @@
 
                         <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Alojamientos</a>
 
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Hoteles</a>
-                            <a href="#" class="dropdown-item">Casas</a>
-                            <a href="#" class="dropdown-item">Departamentos</a>
-                            <a href="#" class="dropdown-item">Arena Calzada</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Hoteles</a></li>
+                            <li><a href="#" class="dropdown-item">Casas</a></li>
+                            <li><a href="#" class="dropdown-item">Departamentos</a></li>
+                            <li><a href="#" class="dropdown-item">Arena Calzada</a></li>
+                        </ul>
 
                     </li>
 
@@ -101,8 +101,8 @@
                         <a href="#" class="nav-link">Contacto</a>
                     </li>
 
-                    <li class="nav-item reservar-celular">
-                        <button href="#" class="nav-link reserva">
+                    <li class="nav-item cta-celular">
+                        <button href="#" class="cta-style">
                             Reservar
                         </button>
                     </li>
@@ -116,12 +116,16 @@
                     </li>
 
 
-                </div>
+                </ul>
 
             
             </div>
 
-
+            <div class="nav-item cta-desktop">
+                <button class="cta-style">
+                    Reservar
+                </button>
+            </div>
 
 
         </div>
