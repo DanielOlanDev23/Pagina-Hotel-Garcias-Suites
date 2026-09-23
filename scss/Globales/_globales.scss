@@ -36,6 +36,10 @@ button,a{
     -webkit-tap-highlight-color: transparent;
 }
 
+button{
+    border: none;
+}
+
 a{
     text-decoration: none;
     color: inherit;

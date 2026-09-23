@@ -1,0 +1,84 @@
+@use '../Globales/variables' as v; 
+@use '../Globales/mixin' as m;
+@use '../Globales//mediaquery' as mq;
+
+.hero{
+    min-height: 100svh;
+    background-image: url(../img/Hero-Hotel.png);
+    background-position: 57% 18%;
+    background-repeat: no-repeat;
+    background-size: auto 115%;
+    padding: 8rem 2rem;
+    position: relative;
+
+    @include mq.tablets { 
+        background-position: 33% center;
+    } 
+
+    @include mq.desktop { 
+        background-position: center;
+    } 
+
+    &::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to left,
+            rgba(15, 25, 34, .20) 0%,
+            rgba(15, 25, 34, .50) 25%,
+            rgba(15, 25, 34, .90) 100%
+        );
+    }
+
+    &__contenido{
+        position: relative;
+        z-index: 1;
+    }
+
+    &__hospedajes{
+        margin-bottom: 2rem;
+        span{
+            color: v.$color-accent;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__eslogan{
+        color: #fff;
+        letter-spacing: 1px;
+        margin-bottom: 3rem;
+        span{
+            color: v.$color-accent;
+        }
+    }
+
+    &__opciones{
+        color: v.$text-muted;
+        margin-bottom: 3rem;
+    }
+
+
+    &__cta{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        &-alojamiento{
+            @include m.btn;
+        }
+
+        
+    }
+    
+}
+
+.house-icon{
+    font-size: 2rem;
+}
+
+.flecha-icon{
+    font-size: 2.6rem;
+    transition: transform .25s ease;
+}
