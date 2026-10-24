@@ -15,7 +15,7 @@
         background-position: 33% center;
     } 
 
-    @include mq.desktop { 
+    @include mq.tablets { 
         background-position: center;
     } 
 
@@ -34,6 +34,20 @@
     &__contenido{
         position: relative;
         z-index: 1;
+
+        @include mq.sm { 
+            margin-left: 2rem;
+            margin-top: 5rem;
+        } 
+
+        @include mq.tablets { 
+            margin-top: 10rem;
+            margin-left: 5rem;
+        } 
+
+        @include mq.desktopxxl { 
+            margin-left: 8rem;
+        } 
     }
 
     &__hospedajes{
@@ -42,6 +56,11 @@
             color: v.$color-accent;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-size: 1.1rem;
+
+            @include mq.sm { 
+                font-size: 1.4rem;
+            } 
         }
     }
 
@@ -49,14 +68,36 @@
         color: #fff;
         letter-spacing: 1px;
         margin-bottom: 3rem;
+        font-size: 3.5rem;
         span{
             color: v.$color-accent;
         }
+
+        @include mq.sm { 
+            font-size: 4rem;
+            max-width: 47rem;
+        } 
+
+        @include mq.tablets { 
+            font-size: 5rem;
+            max-width: 51rem;
+        } 
+
+        @include mq.desktopxxl { 
+            font-size: 7rem;
+            max-width: 70rem;
+        } 
     }
 
     &__opciones{
         color: v.$text-muted;
         margin-bottom: 3rem;
+        max-width: 32rem;
+
+        @include mq.desktopxxl { 
+            font-size: 2.2rem;
+            max-width: 40rem;
+        } 
     }
 
 
@@ -64,15 +105,97 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+
+      
+        @include mq.tablets { 
+            max-width: 45rem;
+            flex-direction: row 
+        } 
         
         &-alojamiento{
             @include m.btn;
+            max-width: 20rem;
+            font-size: 1.3rem;
+
+            @include mq.sm { 
+                max-width: 27rem;
+                font-size: 1.5rem;
+            } 
+        }
+
+        &-reservar{
+            @include m.btn(
+                $color : #fff,
+                $bg-color : transparent,
+                $color-hover: #fff,
+                $padding: 0.8rem 1.5rem,
+                $border: 2px solid  #fff
+            );
+            max-width: 20rem;
+            font-size: 1.3rem;
+            @include mq.sm { 
+                max-width: 27rem;
+                font-size: 1.5rem;
+            } 
+        }
+        
+    }
+
+    &__info{
+        margin-top: 8rem;
+        display: flex;
+        justify-content: center;
+        color: v.$navbar-text;
+
+        @include mq.tablets { 
+            margin-top: 4rem;
+            justify-content: start;
+        } 
+        
+        .info-icon{
+            color: v.$color-accent;
+            font-size: 3rem;
+            @include mq.tablets { 
+                margin-right: 2rem;
+            } 
+            
+        }
+
+        p{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 500;
+            max-width: 14rem;
+            
+            
+            @include mq.tablets { 
+                flex-direction: row;
+                margin-right: 6rem;
+            } 
+
+            @include mq.desktop { 
+                max-width: none;
+            } 
+
+            &:nth-child(2){
+                border-right: 2px solid #676767c9;
+                border-left: 2px solid #676767c9;
+
+                @include mq.tablets { 
+                    border: none;
+                } 
+            }
         }
 
         
     }
     
 }
+
+
 
 .house-icon{
     font-size: 2rem;
@@ -82,3 +205,6 @@
     font-size: 2.6rem;
     transition: transform .25s ease;
 }
+
+
+

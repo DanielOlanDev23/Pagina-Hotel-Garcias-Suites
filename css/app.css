@@ -21072,7 +21072,7 @@ ul, ol {
     background-position: 33% center;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .hero {
     background-position: center;
   }
@@ -21087,6 +21087,23 @@ ul, ol {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 576px) {
+  .hero__contenido {
+    margin-left: 2rem;
+    margin-top: 5rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__contenido {
+    margin-top: 10rem;
+    margin-left: 5rem;
+  }
+}
+@media (min-width: 1400px) {
+  .hero__contenido {
+    margin-left: 8rem;
+  }
+}
 .hero__hospedajes {
   margin-bottom: 2rem;
 }
@@ -21094,23 +21111,61 @@ ul, ol {
   color: #c9a86a;
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-size: 1.1rem;
+}
+@media (min-width: 576px) {
+  .hero__hospedajes span {
+    font-size: 1.4rem;
+  }
 }
 .hero__eslogan {
   color: #fff;
   letter-spacing: 1px;
   margin-bottom: 3rem;
+  font-size: 3.5rem;
 }
 .hero__eslogan span {
   color: #c9a86a;
 }
+@media (min-width: 576px) {
+  .hero__eslogan {
+    font-size: 4rem;
+    max-width: 47rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero__eslogan {
+    font-size: 5rem;
+    max-width: 51rem;
+  }
+}
+@media (min-width: 1400px) {
+  .hero__eslogan {
+    font-size: 7rem;
+    max-width: 70rem;
+  }
+}
 .hero__opciones {
   color: #7a8088;
   margin-bottom: 3rem;
+  max-width: 32rem;
+}
+@media (min-width: 1400px) {
+  .hero__opciones {
+    font-size: 2.2rem;
+    max-width: 40rem;
+  }
 }
 .hero__cta {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hero__cta {
+    max-width: 45rem;
+    flex-direction: row;
+  }
 }
 .hero__cta-alojamiento {
   display: flex;
@@ -21120,6 +21175,8 @@ ul, ol {
   padding: 0.5rem 1.5rem;
   width: 70%;
   font-weight: 600;
+  color: #000;
+  border: 0;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -21129,6 +21186,96 @@ ul, ol {
 }
 .hero__cta-alojamiento:hover .flecha-icon {
   transform: translateX(1.4rem);
+}
+.hero__cta-alojamiento {
+  max-width: 20rem;
+  font-size: 1.3rem;
+}
+@media (min-width: 576px) {
+  .hero__cta-alojamiento {
+    max-width: 27rem;
+    font-size: 1.5rem;
+  }
+}
+.hero__cta-reservar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0.8rem 1.5rem;
+  width: 70%;
+  font-weight: 600;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero__cta-reservar:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+.hero__cta-reservar:hover .flecha-icon {
+  transform: translateX(1.4rem);
+}
+.hero__cta-reservar {
+  max-width: 20rem;
+  font-size: 1.3rem;
+}
+@media (min-width: 576px) {
+  .hero__cta-reservar {
+    max-width: 27rem;
+    font-size: 1.5rem;
+  }
+}
+.hero__info {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center;
+  color: #f8f5f0;
+}
+@media (min-width: 768px) {
+  .hero__info {
+    margin-top: 4rem;
+    justify-content: start;
+  }
+}
+.hero__info .info-icon {
+  color: #c9a86a;
+  font-size: 3rem;
+}
+@media (min-width: 768px) {
+  .hero__info .info-icon {
+    margin-right: 2rem;
+  }
+}
+.hero__info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 500;
+  max-width: 14rem;
+}
+@media (min-width: 768px) {
+  .hero__info p {
+    flex-direction: row;
+    margin-right: 6rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero__info p {
+    max-width: none;
+  }
+}
+.hero__info p:nth-child(2) {
+  border-right: 2px solid rgba(103, 103, 103, 0.7882352941);
+  border-left: 2px solid rgba(103, 103, 103, 0.7882352941);
+}
+@media (min-width: 768px) {
+  .hero__info p:nth-child(2) {
+    border: none;
+  }
 }
 
 .house-icon {
