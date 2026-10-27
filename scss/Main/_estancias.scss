@@ -1,0 +1,61 @@
+@use '../Globales/variables' as v; 
+@use '../Globales/mixin' as m;
+
+.estancias{
+
+    &__head{
+        margin-top: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1rem;
+        color: v.$color-accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before, &::after{
+            content: "";
+            width: 40px;
+            height: 1.1px;
+            display: inline-block;
+            background-color: v.$color-accent;
+        }
+
+        &::before{
+            margin-right: 2rem;
+        }
+        &::after{
+            margin-left: 2rem;
+        }
+    }
+
+    &__heading{
+        margin-top: 3rem;
+        font-size: 4rem;
+        text-align: center;
+        span{
+            color: v.$color-accent;
+        }
+    }
+
+    &__informacion{
+        margin-top: 2rem;
+        color: #7a8088;
+        text-align: center;
+    }
+
+
+    &__opciones{
+        margin-top: 5rem;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img-1{
+        width: 100%;
+        height: 27rem;
+        border-radius: 10px;
+    }
+
+
+}
